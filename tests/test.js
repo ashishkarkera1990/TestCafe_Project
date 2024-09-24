@@ -55,10 +55,10 @@ const nameInput = Selector('#developer-name');
 test('Test Speed', async t => {
     await t
         .maximizeWindow()
-        .typeText(nameInput, 'Peter')
+        .typeText(nameInput, 'Ashish')
         .setTestSpeed(0.1)
         .wait(4000)
-        .typeText(nameInput, ' Parker');
+        .typeText(nameInput, ' Karkera');
 });
 
 fixture ("TestController.takeScreenshot")
@@ -66,7 +66,7 @@ fixture ("TestController.takeScreenshot")
 
 test('Take a screenshot of a fieldset', async t => {
     await t
-        .typeText('#developer-name', 'Peter Parker')
+        .typeText('#developer-name', 'Ashish Karkera')
         .click('#submit-button')
         .takeScreenshot({
             path:     '.Screenshot/thank-you-page.png',
@@ -89,7 +89,7 @@ fixture ("TestController.switchToIframe")
 
 test('Switching to an iframe', async t => {
     const getLocation = ClientFunction(() => window.location.hostname);
-    console.log('getLocation To Be   -- ' + getLocation);
+    //console.log('getLocation To Be   -- ' + getLocation);
 
     // NOTE: the ClientFunction will be executed in TOP window's context
    //await t.expect(getLocation()).eql('www.devexpress.com');
@@ -120,7 +120,7 @@ test('Should retrieve a cookie by name', async t => {
         .expect(value).eql('value1');
 });
 
-fixture.only ("[API] Set Cookies")
+fixture ("[API] Set Cookies")
     .page('https://devexpress.github.io/testcafe/example/');
 
 test('Should set cookies by name and value', async t => {
